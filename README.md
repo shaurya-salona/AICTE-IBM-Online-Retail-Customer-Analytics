@@ -55,7 +55,7 @@ Online e-commerce and wholesale retailers operate in a non-contractual environme
 | `Quantity` | Integer (int64) | Units per line item (negative values denote cancellations/returns) |
 | `InvoiceDate` | Datetime / String | Transaction timestamp (`MM/DD/YYYY HH:MM`) |
 | `UnitPrice` | Float (float64) | Price per unit in GBP (£); non-positives reflect adjustments |
-| `CustomerID` | Float / Integer | 5-digit unique client ID (135,080 nulls in raw data for guest checkouts) |
+| `CustomerID` | Float / Integer | 5-digit customer identifier; 135,080 records have missing customer IDs in the raw dataset. |
 | `Country` | Object / String | Country of client residence / business registration |
 
 > **Note on Verified Customer Count (4,372 Raw vs. 4,338 Clean):**  
@@ -91,7 +91,7 @@ AICTE-IBM-Online-Retail-Customer-Analytics/
 │   └── scaler.pkl                                            # Serialized StandardScaler
 │
 ├── report/
-│   ├── ShauryaSalona_Online_Retail_Customer_Analytics_ProjectReport.docx # Formatted academic report
+│   ├── ShauryaSalona_ProjectReport.docx                      # Formatted academic report (DOCX)
 │   └── figures/                                              # High-resolution generated charts
 │       ├── fig1_monthly_revenue.png
 │       ├── fig2_hourly_distribution.png
@@ -102,7 +102,7 @@ AICTE-IBM-Online-Retail-Customer-Analytics/
 │       └── fig7_coefficients.png
 │
 ├── app.py                                                    # Interactive Streamlit Web Dashboard
-├── requirements.txt                                          # Exact pinned dependencies
+├── requirements.txt                                          # Project dependencies
 └── README.md                                                 # Project documentation
 ```
 
@@ -217,7 +217,7 @@ Evaluated on held-out test set ($n = 664$ customers):
 
 ## 13. Project Limitations
 * **Behavioral Proxy:** In non-contractual commerce, churn is defined via an evaluation window proxy rather than contractual termination.
-* **Guest Transactions:** 24.9% of transactions lacked a `CustomerID`, limiting RFM tracking to registered clients.
+* **Missing Customer Identifiers:** 24.9% of transactions lacked an identifiable `CustomerID` in the raw data, limiting customer-level RFM tracking to verified client accounts.
 * **December Truncation:** Transaction records end on December 9, 2011, providing partial-month data for December.
 
 ---
