@@ -38,10 +38,8 @@ Online e-commerce and wholesale retailers operate in a non-contractual environme
 ---
 
 ## 5. Dataset Description
-* **Source & Dataset Links:**
-  * **Kaggle Dataset (Direct Download):** [E-Commerce Data on Kaggle](https://www.kaggle.com/datasets/carrie1/ecommerce-data?resource=download)
-  * **UCI Machine Learning Repository:** [Online Retail Dataset (UCI ML Repository)](https://archive.ics.uci.edu/dataset/352/online+retail)
-  * **Local Project File:** `data/data.csv` (included locally in repository)
+* **Dataset Source:** [Kaggle E-Commerce Data (Direct Download)](https://www.kaggle.com/datasets/carrie1/ecommerce-data?resource=download)
+* **Local Project File:** `data/data.csv` (the exact dataset downloaded from Kaggle above)
 * **Volume:** 541,909 rows and 8 attributes.
 * **Period:** December 1, 2010 to December 9, 2011 (1 year, 1 week, 2 days).
 * **Context:** UK-based registered online retailer supplying unique all-occasion giftware to wholesale and retail consumers across 38 countries.
